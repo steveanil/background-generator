@@ -8,6 +8,7 @@ function randomColor(){ //the addition of '000000' and the slice() at the end wi
 	return ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
 }
 
+//this changes the background for color1. remember ".style.background" = changes the property of css.
 function setGradient(){
     body.style.background = "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
 
@@ -24,8 +25,8 @@ function randomGradient(){ //same as setGradient() but we are using the random h
 	css.textContent = body.style.background + ";"; 
 }
 
-color1.addEventListener("input", setGradient);
+color1.addEventListener("input", setGradient); //input = for the value being selected, do the function
 
-color2.addEventListener("input", setGradient);
+color2.addEventListener("input", setGradient); // and since this is addEventListener, we do callback by input/click/keypress etc
 
 random.addEventListener("click", randomGradient);
